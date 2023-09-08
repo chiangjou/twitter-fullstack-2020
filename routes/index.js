@@ -8,6 +8,7 @@ const userController = require('../controllers/user-controller')
 // middleware
 const { generalErrorHandler } = require('../middleware/error-handler')
 
+
 const admin = require('./modules/admin')
 router.use('/admin', admin)
 
