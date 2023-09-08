@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Tweet.init({
-    UserId: DataTypes.STRING,
+    UserId: DataTypes.INTEGER,
     description: DataTypes.TEXT
   }, {
     sequelize,
