@@ -26,11 +26,17 @@ module.exports = {
       role: {
         type: Sequelize.STRING
       },
-      createdAt: {
+      account: {
+        type: Sequelize.STRING
+      },
+      cover: {
+        type: Sequelize.STRING
+      },
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
