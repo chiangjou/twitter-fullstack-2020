@@ -7,6 +7,7 @@ const tweetController = require('../controllers/tweet-controller')
 const userController = require('../controllers/user-controller')
 
 // middleware
+const { authenticated } = require('../middleware/auth')
 const { generalErrorHandler } = require('../middleware/error-handler')
 
 const admin = require('./modules/admin')
@@ -23,7 +24,7 @@ router.post('/signin', passport.authenticate('local', { failureRedirect: '/signi
 // Logout
 router.get('/logout', userController.logout)
 
-router.get('/tweets', tweetController.getTweets)
+router.get('/tweets', authenticated, tweetController.getTweets)
 
 // Fallback
 router.use('/', (req, res) => res.redirect('/tweets'))
