@@ -1,27 +1,36 @@
 const bcrypt = require('bcryptjs')
-const db = require('../models')
-const { User } = db
+const { User } = require('../models')
+const { Op } = require('sequelize')
 
 const userController = {
   signupPage: (req, res) => {
     res.render('signup')
   },
   signup: (req, res, next) => {
-    if (req.body.password !== req.body.passwordCheck) throw new Error('Passwords do not match!')
+    const { account, name, email, password } = req.body
 
-    User.findOne({ where: { email: req.body.email } })
+    return User.findOne({
+      where: {
+        [Op.or]: [{ email }, { account }]
+      }
+    })
       .then(user => {
-        if (user) throw new Error('Email already exists!')
-        return bcrypt.hash(req.body.password, 10)
+        if (user) {
+          if (user.toJSON().account === account) throw new Error('此帳號已被註冊')
+          if (user.toJSON().email === email) throw new Error('此 Email 已被註冊')
+        }
+        return bcrypt.hash(password, 10)
       })
       .then(hash => User.create({
-        name: req.body.name,
-        email: req.body.email,
-        password: hash
+        account,
+        name,
+        email,
+        password: hash,
+        role: 'user'
       }))
       .then(() => {
-        req.flash('success_messages', '成功註冊帳號！')
-        res.redirect('/signin')
+        req.flash('success_messages', '成功註冊')
+        return res.redirect('/signin')
       })
       .catch(err => next(err))
   }
