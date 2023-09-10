@@ -118,3 +118,198 @@ a:focus {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+
+/* ---------- Signin / Signup  ---------- */
+
+.signup-content,
+.signin-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 356px;
+  height: 1200px;
+  background-color: #FFFFFF;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    margin: 64px auto 0 auto;
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+      }
+    }
+
+    .title {
+      display: flex;
+      margin: 24px auto 0 auto;
+      height: 26px;
+      font-family: "Noto Sans TC";
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 26px;
+      color: #1C1C1C;
+    }
+  }
+
+  .form-panel {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 100%;
+
+    .form-row {
+      position: relative;
+      margin: 0 auto 32px auto;
+      width: 100%;
+      border-radius: 2px;
+      background-color: #F5F8FA;
+
+      .form-label {
+        margin-left: 10.55px;
+        margin-bottom: 0;
+        height: 22px;
+        width: 100%;
+        font-family: "Noto Sans TC";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        color: var(--dark-80);
+      }
+    }
+  }
+}
+
+.form-input {
+  height: 26px;
+  width: 356px;
+  padding-left: 10px;
+  border-radius: 2px;
+  border-width: 0;
+  border-bottom: 2px solid #657786;
+  font-family: "Noto Sans TC";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--dark-100);
+  background-color: #F5F8FA;
+}
+
+.form-input::placeholder {
+  color: #B5B5BE
+}
+
+.form-input:hover,
+.form-input:focus {
+  border-bottom: 2px solid var(--secondary-blue);
+  outline-width: 0;
+  outline: none;
+}
+
+.was-validated .form-input:invalid {
+  border-bottom: 2px solid var(--error);
+}
+
+#feedback-text {
+  position: absolute;
+  margin: 0;
+  padding-top: 4px;
+  font-family: "Noto Sans TC";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--error);
+  background-color: #FFFFFF;
+}
+
+.input-count {
+  position: absolute;
+  padding-top: 4px;
+  right: 0;
+  font-family: "Noto Sans TC";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--dark-80);
+  background-color: #FFFFFF;
+}
+
+.control-panel {
+  position: absolute;
+  top: 640px;
+  width: 356px;
+  height: 46px;
+}
+
+.signin-control-panel {
+  position: absolute;
+  top: 384px;
+  width: 356px;
+  height: 46px;
+}
+
+#submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: var(--brand-color);
+  border: none;
+
+  .btn-text {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-family: "Noto Sans TC";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}
+
+.sub-btn {
+  position: absolute;
+  top: 700px;
+  left: 452px;
+  padding: 6px 12px;
+  width: 56px;
+  height: 36px;
+}
+
+.signin-sub-btn {
+  position: absolute;
+  top: 446px;
+  left: 497px;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 12px;
+  width: 160px;
+  height: 36px;
+}
+
+.sub-link,
+.dot {
+  font-family: "Noto Sans TC";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.sub-link {
+  text-decoration: underline;
+  color: var(--primary);
+}

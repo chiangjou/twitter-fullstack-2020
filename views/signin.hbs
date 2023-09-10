@@ -1,19 +1,38 @@
-<div class="mb-4 text-center">
-  <h1 class="h3 font-weight-normal mb-3">Sign In</h1>
-</div>
-<form class="form-signin" action="/signin" method="POST">
-  <div class="form-row mb-3">
-    <label class="form-label" for="email">Email</label>
-    <input class="form-control" id="email" type="text" name="email" class="form-control" placeholder="Email" required
-      autofocus>
+<div class="container">
+  <div class="signin-content">
+    <div class="header">
+      <div class="logo">
+        <img class="icon" src="/stylesheets/icons/logo.svg" alt="logo">
+      </div>
+      <h3 class="title">登入 Alphitter</h3>
+    </div>
+    <div class="form-panel">
+      <div class="form-container">
+        <form action="/signin" method="POST" id="form" class="needs-validation" novalidate>
+          <div class="form-row">
+            <label for="account" class="form-label">帳號</label>
+            <input type="text" id="account" name="account" placeholder="請輸入帳號" class="form-input" value="{{account}}"
+              required />
+            <div class="invalid-feedback" id="feedback-text">請輸入 10 個字以內</div>
+          </div>
+          <div class="form-row">
+            <label for="password" class="form-label">密碼</label>
+            <input type="password" id="password" name="password" placeholder="請設定密碼" class="form-input"
+              value="{{password}}" required />
+            <div class="invalid-feedback" id="feedback-text">請設定密碼</div>
+          </div>
+        <div class="signin-control-panel">
+          <button type="submit" class="btn btn-submit" id="submit">
+            <span class="btn-text">登入
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="signin-sub-btn">
+      <a href="/signup" class="sub-link">註冊</a>
+      <span class="dot">・</span>
+      <a href="/admin/signin" class="sub-link">後台登入</a>
+    </div>
   </div>
-  <div class="form-row mb-3">
-    <label class="form-label" for="password">Password</label>
-    <input class="form-control" id="password" type="password" name="password" class="form-control"
-      placeholder="Password" required>
-  </div>
-  <button class="btn btn-primary btn-block" type="submit">Submit</button>
-</form>
-<div class="mb-4 text-center">
-  <p><a href="/signup">Sign Up</a></p>
 </div>
