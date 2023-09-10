@@ -122,7 +122,9 @@ a:focus {
 
 /* ---------- Signin / Signup  ---------- */
 
-.signup-content {
+
+.signup-content,
+.signin-content {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -134,12 +136,12 @@ a:focus {
     display: flex;
     flex-direction: column;
     margin: 64px auto 0 auto;
-    
+
     .logo {
       width: 50px;
       height: 50px;
       margin: 0 auto;
-  
+
       .icon {
         width: 40px;
         height: 40px;
@@ -156,7 +158,7 @@ a:focus {
       font-weight: 700;
       line-height: 26px;
       color: #1C1C1C;
-    } 
+    }
   }
 
   .form-panel {
