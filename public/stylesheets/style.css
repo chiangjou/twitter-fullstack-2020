@@ -122,6 +122,7 @@ a:focus {
 
 /* ---------- Signin / Signup  ---------- */
 
+
 .signup-content,
 .signin-content {
   display: flex;
@@ -242,16 +243,16 @@ a:focus {
   background-color: #FFFFFF;
 }
 
-.control-panel {
+.signin-control-panel {
   position: absolute;
-  top: 640px;
+  top: 384px;
   width: 356px;
   height: 46px;
 }
 
-.signin-control-panel {
+.signup-control-panel {
   position: absolute;
-  top: 384px;
+  top: 640px;
   width: 356px;
   height: 46px;
 }
@@ -280,7 +281,7 @@ a:focus {
   }
 }
 
-.sub-btn {
+.signup-sub-btn {
   position: absolute;
   top: 700px;
   left: 452px;
